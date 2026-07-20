@@ -4,8 +4,8 @@ export const siteConfig = {
   shortName: "PL International",
   description:
     "PL International is a trusted study abroad consultancy in Bangladesh offering university admission, visa processing, embassy appointment, and travel support for students planning to study in Malaysia and Australia.",
-  url: "https://prolinkinternational.odoo.com",
-  domain: "prolinkinternational.odoo.com",
+  url: "https://ifatroman05-crypto.github.io/pl-international-web",
+  domain: "ifatroman05-crypto.github.io/pl-international-web",
   ogImage: "/og-image.jpg",
   phone: "+880 1950-217088",
   phoneRaw: "+8801950217088",
