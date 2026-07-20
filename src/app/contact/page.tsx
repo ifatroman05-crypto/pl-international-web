@@ -9,6 +9,7 @@ import { siteConfig } from "@/content/site"
 import { GOOGLE_MAPS_EMBED_URL, COUNTRIES } from "@/lib/constants"
 import { useToast } from "@/components/ui/toast"
 import PageHero from "@/components/sections/page-hero"
+import PremiumCard from "@/components/ui/premium-card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
@@ -78,10 +79,11 @@ export default function ContactPage() {
                 Fill out the form below and we&apos;ll get back to you shortly.
               </p>
 
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="mt-8 space-y-5"
-              >
+              <PremiumCard className="p-8" hover={false}>
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="space-y-5"
+                >
                 <div>
                   <Label htmlFor="name">Full Name</Label>
                   <Input
@@ -176,7 +178,8 @@ export default function ContactPage() {
                     </>
                   )}
                 </Button>
-              </form>
+                  </form>
+                </PremiumCard>
             </div>
 
             <div className="lg:col-span-2">
@@ -187,11 +190,11 @@ export default function ContactPage() {
                 Reach out to us through any of these channels.
               </p>
 
-              <div className="mt-8 space-y-6">
+              <div className="mt-8 space-y-4">
                 {contactInfo.map((item) => {
                   const Icon = item.icon
                   return (
-                    <div key={item.label} className="flex items-start gap-4">
+                    <PremiumCard key={item.label} className="flex items-start gap-4 p-5" hover={false}>
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                         <Icon className="h-5 w-5" />
                       </div>
@@ -202,15 +205,15 @@ export default function ContactPage() {
                         {item.href ? (
                           <a
                             href={item.href}
-                            className="mt-0.5 text-dark hover:text-primary transition-colors"
+                            className="mt-0.5 text-dark hover:text-primary transition-colors font-medium"
                           >
                             {item.value}
                           </a>
                         ) : (
-                          <p className="mt-0.5 text-dark">{item.value}</p>
+                          <p className="mt-0.5 text-dark font-medium">{item.value}</p>
                         )}
                       </div>
-                    </div>
+                    </PremiumCard>
                   )
                 })}
               </div>
@@ -221,18 +224,18 @@ export default function ContactPage() {
 
       <section className="pb-16 md:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="overflow-hidden rounded-3xl shadow-lg">
+          <PremiumCard className="overflow-hidden p-1" hover={false}>
             <iframe
               src={GOOGLE_MAPS_EMBED_URL}
               width="100%"
               height="400"
-              style={{ border: 0 }}
+              style={{ border: 0, borderRadius: "calc(1.5rem - 4px)" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="PL International Office Location"
             />
-          </div>
+          </PremiumCard>
         </div>
       </section>
     </>

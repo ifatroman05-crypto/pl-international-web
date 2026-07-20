@@ -7,10 +7,11 @@ import {
   Handshake,
   Zap,
   Star,
+  Map,
   type LucideIcon,
 } from "lucide-react"
-import { cn } from "@/lib/utils"
 import { siteConfig } from "@/content/site"
+import PremiumCard from "@/components/ui/premium-card"
 
 const iconMap: Record<string, LucideIcon> = {
   "shield-check": ShieldCheck,
@@ -18,6 +19,7 @@ const iconMap: Record<string, LucideIcon> = {
   handshake: Handshake,
   zap: Zap,
   star: Star,
+  map: Map,
 }
 
 const containerVariants = {
@@ -66,28 +68,18 @@ export default function WhyChooseUs() {
               <motion.div
                 key={item.title}
                 variants={cardVariants}
-                className={cn(
-                  "rounded-3xl border border-gray-200 bg-white p-8",
-                  "shadow-soft hover:shadow-lg transition-all duration-300",
-                  "hover:translate-y-[-4px] group cursor-default",
-                  "text-center sm:text-left",
-                )}
               >
-                <div
-                  className={cn(
-                    "w-14 h-14 rounded-2xl flex items-center justify-center mb-5",
-                    "bg-primary/10 group-hover:bg-primary/20 transition-colors",
-                    "mx-auto sm:mx-0",
-                  )}
-                >
-                  <Icon className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="font-heading text-lg font-semibold text-dark mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.description}
-                </p>
+                <PremiumCard className="p-8 text-center sm:text-left group cursor-default">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors mx-auto sm:mx-0">
+                    <Icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold text-dark mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </PremiumCard>
               </motion.div>
             )
           })}

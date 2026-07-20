@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { siteConfig } from "@/content/site"
 import PageHero from "@/components/sections/page-hero"
+import PremiumCard from "@/components/ui/premium-card"
 import CTABanner from "@/components/sections/cta-banner"
 import {
   GraduationCap,
@@ -11,16 +12,18 @@ import {
   Landmark,
   Award,
   Backpack,
+  Map,
+  Car,
 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Comprehensive study abroad services including counseling, university admission, visa processing, embassy appointment, and more.",
+    "Comprehensive services including study abroad counseling, university admission, visa processing, tourism packages, hotel booking, and airport support.",
   openGraph: {
     title: "Our Services | PL International",
     description:
-      "Comprehensive study abroad services including counseling, university admission, visa processing, and more.",
+      "Comprehensive services including study abroad counseling, university admission, visa processing, tourism packages, and more.",
   },
   alternates: {
     canonical: `${siteConfig.url}/services`,
@@ -36,6 +39,8 @@ const iconMap: Record<string, React.ReactNode> = {
   landmark: <Landmark className="h-8 w-8" />,
   award: <Award className="h-8 w-8" />,
   backpack: <Backpack className="h-8 w-8" />,
+  map: <Map className="h-8 w-8" />,
+  car: <Car className="h-8 w-8" />,
 }
 
 export default function ServicesPage() {
@@ -43,7 +48,7 @@ export default function ServicesPage() {
     <>
       <PageHero
         title="Our Services"
-        subtitle="Comprehensive study abroad services"
+        subtitle="Education • Tourism • Visa Solutions — All Under One Roof"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },
@@ -55,18 +60,15 @@ export default function ServicesPage() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-lg text-gray-600 leading-relaxed">
               At PL International, we offer a complete range of services to
-              guide you through every step of your study abroad journey. From
-              initial counseling to pre-departure support, our experienced team
-              ensures a smooth and hassle-free experience.
+              guide you through every step of your study abroad journey and
+              travel experience — from initial counseling and university admission
+              to tourism packages and airport support.
             </p>
           </div>
 
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {siteConfig.services.map((service) => (
-              <div
-                key={service.title}
-                className="group rounded-3xl border border-gray-200 bg-light p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
-              >
+              <PremiumCard key={service.title} className="p-6 group cursor-default">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   {iconMap[service.icon] || <GraduationCap className="h-8 w-8" />}
                 </div>
@@ -76,7 +78,7 @@ export default function ServicesPage() {
                 <p className="mt-3 text-sm text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
-              </div>
+              </PremiumCard>
             ))}
           </div>
         </div>
@@ -84,7 +86,7 @@ export default function ServicesPage() {
 
       <CTABanner
         title="Looking for Specific Assistance?"
-        description="Contact us today and let our experts guide you through every step of your study abroad journey."
+        description="Contact us today and let our experts guide you through your education or travel journey."
         buttonText="Get Started"
         buttonHref="/apply"
       />

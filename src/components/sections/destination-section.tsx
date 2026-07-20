@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { CheckCircle2, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import PremiumCard from "@/components/ui/premium-card"
 
 interface DestinationData {
   name: string
@@ -36,9 +37,9 @@ export default function DestinationSection({
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-primary/10">
+            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/10 border border-white/20">
               <div className="absolute inset-0 flex items-center justify-center">
-                <p className="font-heading text-2xl sm:text-3xl font-bold text-primary/30">
+                <p className="font-heading text-3xl sm:text-4xl font-bold text-primary/20">
                   {data.name}
                 </p>
               </div>
@@ -86,10 +87,10 @@ export default function DestinationSection({
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {data.whyStudy.map((item) => (
-              <div key={item} className="flex items-start gap-3">
+              <PremiumCard key={item} className="flex items-start gap-3 p-4" hover={false}>
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-gray-700 text-sm">{item}</span>
-              </div>
+              </PremiumCard>
             ))}
           </div>
         </motion.div>

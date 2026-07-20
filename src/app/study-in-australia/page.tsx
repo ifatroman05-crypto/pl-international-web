@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { siteConfig } from "@/content/site"
 import PageHero from "@/components/sections/page-hero"
 import CTABanner from "@/components/sections/cta-banner"
+import PremiumCard from "@/components/ui/premium-card"
 import { CheckCircle } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -49,13 +50,10 @@ export default function StudyInAustraliaPage() {
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {australia.whyStudy.map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-2xl border border-gray-200 bg-light p-5 shadow-lg"
-              >
+              <PremiumCard key={item} className="flex items-start gap-3 p-5" hover={false}>
                 <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                 <span className="text-sm text-gray-700">{item}</span>
-              </div>
+              </PremiumCard>
             ))}
           </div>
         </div>
@@ -72,15 +70,12 @@ export default function StudyInAustraliaPage() {
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {australia.topUniversities.map((uni) => (
-              <div
-                key={uni.name}
-                className="rounded-3xl border border-gray-200 bg-light p-6 shadow-lg"
-              >
+              <PremiumCard key={uni.name} className="p-6" hover={false}>
                 <h3 className="font-heading text-base font-semibold text-dark">
                   {uni.name}
                 </h3>
                 <p className="mt-2 text-sm text-gray-500">{uni.ranking}</p>
-              </div>
+              </PremiumCard>
             ))}
           </div>
         </div>
@@ -95,7 +90,7 @@ export default function StudyInAustraliaPage() {
             Investment in your future with world-class education
           </p>
 
-          <div className="mt-12 overflow-hidden rounded-3xl border border-gray-200 shadow-lg">
+          <div className="mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/70 backdrop-blur-xl shadow-[0_20px_60px_rgba(15,23,42,0.12)]">
             <table className="w-full">
               <thead>
                 <tr className="bg-primary text-light">
@@ -111,8 +106,8 @@ export default function StudyInAustraliaPage() {
                 {australia.tuitionFees.map((fee, i) => (
                   <tr
                     key={fee.program}
-                    className={`border-t border-gray-100 ${
-                      i % 2 === 0 ? "bg-light" : "bg-gray-50"
+                    className={`border-t border-white/10 ${
+                      i % 2 === 0 ? "bg-white/50" : "bg-transparent"
                     }`}
                   >
                     <td className="px-6 py-4 text-sm font-medium text-dark">
@@ -140,10 +135,7 @@ export default function StudyInAustraliaPage() {
 
           <div className="mt-12 space-y-6">
             {australia.visaProcess.map((step) => (
-              <div
-                key={step.step}
-                className="relative flex items-start gap-6 rounded-3xl border border-gray-200 bg-light p-6 shadow-lg"
-              >
+              <PremiumCard key={step.step} className="flex items-start gap-6 p-6" hover={false}>
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-light">
                   {step.step}
                 </div>
@@ -153,7 +145,7 @@ export default function StudyInAustraliaPage() {
                   </h3>
                   <p className="mt-1 text-gray-600">{step.description}</p>
                 </div>
-              </div>
+              </PremiumCard>
             ))}
           </div>
         </div>

@@ -24,3 +24,37 @@
     text-wrap: balance;
   }
 }
+
+@layer components {
+  .glass {
+    @apply rounded-3xl border border-white/10 bg-white/70 backdrop-blur-xl shadow-[0_20px_60px_rgba(15,23,42,0.12)];
+  }
+  .glass-dark {
+    @apply rounded-3xl border border-white/10 bg-dark/60 backdrop-blur-xl shadow-[0_20px_60px_rgba(15,23,42,0.3)];
+  }
+  .glass-accent {
+    @apply rounded-3xl border border-accent/20 bg-accent/10 backdrop-blur-xl shadow-[0_20px_60px_rgba(15,23,42,0.12)];
+  }
+  .premium-glow {
+    @apply transition-all duration-500;
+  }
+  .premium-glow:hover {
+    box-shadow: 0 0 30px rgba(244, 196, 0, 0.15), 0 20px 60px rgba(15, 23, 42, 0.12);
+  }
+  .scroll-indicator {
+    animation: scroll-bounce 2s ease-in-out infinite;
+  }
+  @keyframes scroll-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(8px); opacity: 1; }
+  }
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}

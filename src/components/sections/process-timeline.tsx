@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/content/site"
+import PremiumCard from "@/components/ui/premium-card"
 
 const containerVariants = {
   hidden: {},
@@ -35,12 +36,12 @@ export default function ProcessTimeline() {
             How It Works
           </p>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-dark">
-            Application Process
+            Simple Process
           </h2>
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-6 sm:left-1/2 sm:-translate-x-px top-0 bottom-0 w-0.5 bg-primary/20" />
+          <div className="absolute left-6 sm:left-1/2 sm:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/30 to-accent/30" />
 
           <motion.div
             className="relative"
@@ -64,19 +65,16 @@ export default function ProcessTimeline() {
                       isEven ? "sm:pr-12" : "sm:pl-12 sm:ml-auto",
                     )}
                   >
-                    <div
-                      className={cn(
-                        "bg-white rounded-3xl border border-gray-200 p-6 shadow-soft",
-                        isEven ? "sm:text-right" : "",
-                      )}
-                    >
+                    <PremiumCard className={cn("p-6", isEven ? "sm:text-right" : "")}>
                       <div
                         className={cn(
                           "flex items-center gap-3 mb-2",
                           isEven ? "sm:flex-row-reverse" : "",
                         )}
                       >
-                        <div className="w-8 h-8 rounded-full bg-primary text-light flex items-center justify-center font-heading font-bold text-xs shrink-0 sm:hidden">
+                        <div className={cn(
+                          "w-8 h-8 rounded-full bg-primary text-light flex items-center justify-center font-heading font-bold text-xs shrink-0 sm:hidden",
+                        )}>
                           {step.step}
                         </div>
                         <h3 className="font-heading text-lg font-semibold text-dark">
@@ -91,7 +89,7 @@ export default function ProcessTimeline() {
                       >
                         {step.description}
                       </p>
-                    </div>
+                    </PremiumCard>
                   </div>
 
                   <div className="absolute left-6 sm:left-1/2 sm:-translate-x-1/2 top-0 -translate-x-1/2 hidden sm:flex">

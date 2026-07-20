@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Quote } from "lucide-react"
-import { cn } from "@/lib/utils"
 import { siteConfig } from "@/content/site"
+import PremiumCard from "@/components/ui/premium-card"
 
 const containerVariants = {
   hidden: {},
@@ -34,7 +34,7 @@ export default function Testimonials() {
             Testimonials
           </p>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-dark">
-            What Our Students Say
+            What Our Clients Say
           </h2>
         </motion.div>
 
@@ -49,22 +49,19 @@ export default function Testimonials() {
             <motion.div
               key={testimonial.name}
               variants={cardVariants}
-              className={cn(
-                "rounded-3xl border border-gray-200 bg-white p-8",
-                "shadow-soft hover:shadow-lg transition-shadow",
-                "flex flex-col",
-              )}
             >
-              <Quote className="w-8 h-8 text-primary/20 mb-4" />
-              <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-6 italic">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-              <div className="border-t border-gray-100 pt-4">
-                <p className="font-heading font-semibold text-dark text-sm">
-                  {testimonial.name}
+              <PremiumCard className="p-8 flex flex-col" hover={false}>
+                <Quote className="w-8 h-8 text-primary/20 mb-4" />
+                <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-6 italic">
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
-                <p className="text-gray-500 text-xs">{testimonial.program}</p>
-              </div>
+                <div className="border-t border-white/10 pt-4">
+                  <p className="font-heading font-semibold text-dark text-sm">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-gray-500 text-xs">{testimonial.program}</p>
+                </div>
+              </PremiumCard>
             </motion.div>
           ))}
         </motion.div>

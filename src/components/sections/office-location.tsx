@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion"
 import { MapPin } from "lucide-react"
-import { cn } from "@/lib/utils"
 import { siteConfig } from "@/content/site"
 import { GOOGLE_MAPS_EMBED_URL } from "@/lib/constants"
+import PremiumCard from "@/components/ui/premium-card"
 
 export default function OfficeLocation() {
   return (
@@ -37,18 +37,18 @@ export default function OfficeLocation() {
             <p className="text-gray-700">{siteConfig.address}</p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-soft border border-gray-200">
+          <PremiumCard className="overflow-hidden p-1" hover={false}>
             <iframe
               src={GOOGLE_MAPS_EMBED_URL}
               width="100%"
               height="400"
-              style={{ border: 0 }}
+              style={{ border: 0, borderRadius: "calc(1.5rem - 4px)" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="PL International Office Location"
             />
-          </div>
+          </PremiumCard>
         </motion.div>
       </div>
     </section>

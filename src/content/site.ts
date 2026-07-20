@@ -1,9 +1,10 @@
 export const siteConfig = {
   name: "PL INTERNATIONAL",
-  tagline: "Study Abroad",
+  tagline: "Study Abroad • Tourism • Visa Solutions",
+  taglineFull: "Your Global Education & Travel Partner",
   shortName: "PL International",
   description:
-    "PL International is a trusted study abroad consultancy in Bangladesh offering university admission, visa processing, embassy appointment, and travel support for students planning to study in Malaysia and Australia.",
+    "PL International is a trusted international education consultancy and travel agency in Bangladesh offering university admission, visa processing, tourism packages, hotel booking, and airport support for students and travelers heading to Malaysia and Australia.",
   url: "https://ifatroman05-crypto.github.io/pl-international-web",
   domain: "ifatroman05-crypto.github.io/pl-international-web",
   ogImage: "/og-image.jpg",
@@ -16,17 +17,17 @@ export const siteConfig = {
     name: "Sa'ad Nazrul",
     role: "Founder & Chief Executive Officer",
     shortBio:
-      "Sa'ad Nazrul is the Founder & CEO of PL International. He is committed to helping Bangladeshi students achieve their dream of studying abroad through transparent counseling, professional admission guidance, and complete visa and travel support.",
+      "Sa'ad Nazrul is the Founder & CEO of PL International. He is committed to helping Bangladeshi students and travelers achieve their global aspirations through transparent counseling, professional guidance, and complete visa and travel support.",
     fullBio:
-      "Sa'ad Nazrul is the Founder and Chief Executive Officer of PL International, a Bangladesh-based international education consultancy dedicated to helping students pursue higher education opportunities abroad. Under his leadership, PL International focuses on making the study abroad journey simple, transparent, and stress-free through end-to-end admission, visa, and travel assistance.",
+      "Sa'ad Nazrul is the Founder and Chief Executive Officer of PL International, a Bangladesh-based international education and travel agency dedicated to helping students and travelers pursue opportunities abroad. Under his leadership, PL International focuses on making global journeys simple, transparent, and stress-free through end-to-end admission, visa, tourism, and travel assistance.",
     image: "/ceo/saad-nazrul.jpg",
   },
   navLinks: [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
+    { label: "Study Abroad", href: "/study-in-malaysia" },
+    { label: "Tourism", href: "/tourism" },
     { label: "Services", href: "/services" },
-    { label: "Study in Malaysia", href: "/study-in-malaysia" },
-    { label: "Study in Australia", href: "/study-in-australia" },
+    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
   services: [
@@ -55,9 +56,15 @@ export const siteConfig = {
       icon: "building",
     },
     {
-      title: "Air Ticket Booking",
+      title: "Tourism Packages",
       description:
-        "Affordable flight booking services for students with special discounts and flexible travel arrangements.",
+        "Curated travel packages to Malaysia and Australia including sightseeing, hotel booking, and guided tours at competitive prices.",
+      icon: "map",
+    },
+    {
+      title: "Hotel & Flight Booking",
+      description:
+        "Affordable hotel accommodation and air ticket booking services with special discounts and flexible travel arrangements.",
       icon: "plane",
     },
     {
@@ -77,6 +84,70 @@ export const siteConfig = {
       description:
         "Comprehensive pre-departure briefing, accommodation arrangements, and travel tips for a smooth transition.",
       icon: "backpack",
+    },
+    {
+      title: "Airport Support",
+      description:
+        "Airport pickup, drop-off, and assistance services for students and travelers arriving in Malaysia or Australia.",
+      icon: "car",
+    },
+  ],
+  tourismPackages: [
+    {
+      title: "Kuala Lumpur City Escape",
+      destination: "malaysia",
+      duration: "4 Days / 3 Nights",
+      price: "From BDT 45,000",
+      highlights: [
+        "Petronas Twin Towers visit",
+        "Batu Caves tour",
+        "Kuala Lumpur City Walk",
+        "Bukit Bintang shopping",
+        "Halal fine dining experience",
+      ],
+      includes: ["Hotel (3-star)", "Daily breakfast", "Airport transfer", "English guide"],
+    },
+    {
+      title: "Malaysia Explorer",
+      destination: "malaysia",
+      duration: "7 Days / 6 Nights",
+      price: "From BDT 85,000",
+      highlights: [
+        "Kuala Lumpur + Langkawi",
+        "Cable car & Sky Bridge",
+        "Langkawi beach resort",
+        "Mangrove tour",
+        "Underwater World",
+      ],
+      includes: ["Hotel (4-star)", "Breakfast & dinner", "All transfers", "Tour guide"],
+    },
+    {
+      title: "Sydney Highlights",
+      destination: "australia",
+      duration: "5 Days / 4 Nights",
+      price: "From BDT 1,50,000",
+      highlights: [
+        "Sydney Opera House tour",
+        "Harbour Bridge climb",
+        "Bondi Beach",
+        "Blue Mountains day trip",
+        "Darling Harbour dinner cruise",
+      ],
+      includes: ["Hotel (4-star)", "Daily breakfast", "Airport transfer", "English guide"],
+    },
+    {
+      title: "Australia Grand Tour",
+      destination: "australia",
+      duration: "10 Days / 9 Nights",
+      price: "From BDT 2,80,000",
+      highlights: [
+        "Sydney + Melbourne + Gold Coast",
+        "Great Ocean Road tour",
+        "Theme parks admission",
+        "Wildlife encounters",
+        "City sightseeing tours",
+      ],
+      includes: ["Hotel (4-star)", "Breakfast daily", "Domestic flights", "Full-time guide"],
     },
   ],
   destinations: {
@@ -309,16 +380,16 @@ export const siteConfig = {
   },
   stats: [
     { label: "Students Guided", value: "500+" },
-    { label: "Visa Success Rate", value: "98%" },
+    { label: "Visa Success Rate", value: "95%" },
     { label: "Partner Universities", value: "50+" },
-    { label: "Countries Served", value: "2+" },
+    { label: "24/7 Support", value: "Always" },
   ],
   processSteps: [
-    { step: 1, title: "Free Counseling", description: "Discuss your goals and get personalized study abroad advice." },
-    { step: 2, title: "University Selection", description: "Choose the best university and program for your profile." },
-    { step: 3, title: "Document Preparation", description: "We help prepare all required documents for admission." },
-    { step: 4, title: "Visa Processing", description: "Complete visa application support from start to finish." },
-    { step: 5, title: "Travel & Pre-Departure", description: "Get ready for your journey with our pre-departure guidance." },
+    { step: 1, title: "Free Counseling", description: "Discuss your goals and get personalized study abroad or travel advice." },
+    { step: 2, title: "Program Selection", description: "Choose the best university, program, or tour package for your needs." },
+    { step: 3, title: "Document Preparation", description: "We help prepare all required documents for admission, visa, or travel." },
+    { step: 4, title: "Visa & Travel Processing", description: "Complete visa application support and travel arrangements from start to finish." },
+    { step: 5, title: "Departure & Arrival", description: "Get ready for your journey with pre-departure guidance and airport support." },
   ],
   whyChooseUs: [
     {
@@ -343,8 +414,13 @@ export const siteConfig = {
     },
     {
       title: "Experienced Team",
-      description: "Our team has years of experience in international education and visa processing.",
+      description: "Our team has years of experience in international education, tourism, and visa processing.",
       icon: "star",
+    },
+    {
+      title: "Travel & Tourism",
+      description: "Premium tourism packages including hotel booking, guided tours, and airport assistance.",
+      icon: "map",
     },
   ],
   testimonials: [
@@ -365,6 +441,12 @@ export const siteConfig = {
       program: "Taylor's University",
       quote:
         "The counseling I received was exceptional. They helped me choose the right university and program that matched my career goals perfectly.",
+    },
+    {
+      name: "Nadia Islam",
+      program: "Malaysia Explorer Tour",
+      quote:
+        "Our family trip to Langkawi arranged by PL International was amazing. Every detail was perfectly planned — from airport pickup to hotel and tours.",
     },
   ],
   socialLinks: {

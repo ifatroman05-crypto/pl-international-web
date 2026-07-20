@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { siteConfig } from "@/content/site"
 import { assetPath } from "@/lib/constants"
 import { ArrowRight } from "lucide-react"
+import PremiumCard from "@/components/ui/premium-card"
 
 export default function CeoSection() {
   const { ceo } = siteConfig

@@ -42,7 +42,7 @@ export default function HomePage() {
       <OfficeLocation />
       <CTABanner
         title="Ready to Start Your Journey?"
-        description="Contact PL International today and take the first step toward studying abroad."
+        description="Contact PL International today and take the first step toward your global education or travel experience."
         buttonText="Apply Now"
         buttonHref="/apply"
       />

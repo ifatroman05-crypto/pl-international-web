@@ -11,9 +11,12 @@ import {
   Landmark,
   Award,
   Backpack,
+  Map,
+  Car,
   type LucideIcon,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import PremiumCard from "@/components/ui/premium-card"
 import { siteConfig } from "@/content/site"
 
 const iconMap: Record<string, LucideIcon> = {
@@ -25,6 +28,8 @@ const iconMap: Record<string, LucideIcon> = {
   landmark: Landmark,
   award: Award,
   backpack: Backpack,
+  map: Map,
+  car: Car,
 }
 
 const containerVariants = {
@@ -73,21 +78,18 @@ export default function ServicesGrid() {
               <motion.div
                 key={service.title}
                 variants={cardVariants}
-                className={cn(
-                  "rounded-3xl border border-gray-200 bg-white p-6",
-                  "shadow-soft hover:shadow-lg transition-all duration-300",
-                  "hover:translate-y-[-4px] group cursor-default",
-                )}
               >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-heading text-base font-semibold text-dark mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {service.description}
-                </p>
+                <PremiumCard className="p-6 group cursor-default">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-heading text-base font-semibold text-dark mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </PremiumCard>
               </motion.div>
             )
           })}

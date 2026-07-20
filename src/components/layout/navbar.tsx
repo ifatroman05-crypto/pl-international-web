@@ -27,9 +27,9 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-light/90 backdrop-blur-md shadow-sm"
+          ? "border-b border-white/10 bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.08)]"
           : "bg-transparent",
       )}
     >
@@ -43,21 +43,26 @@ export default function Navbar() {
               height={40}
               className="h-8 w-auto lg:h-10"
             />
-            <span className="font-heading text-lg font-bold text-primary lg:text-xl">
-              {siteConfig.name}
-            </span>
+            <div className="flex flex-col">
+              <span className="font-heading text-lg font-bold text-primary lg:text-xl leading-tight">
+                {siteConfig.name}
+              </span>
+              <span className="font-body text-[10px] text-gray-500 tracking-wider uppercase leading-tight hidden sm:block">
+                {siteConfig.tagline}
+              </span>
+            </div>
           </Link>
 
-          <nav className="hidden items-center gap-6 lg:flex">
+          <nav className="hidden items-center gap-1 lg:flex">
             {siteConfig.navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "font-body text-sm font-medium transition-colors hover:text-primary",
-                  pathname === link.href
-                    ? "text-primary"
-                    : "text-dark/70",
+                  "relative px-4 py-2 font-body text-sm font-medium transition-colors rounded-xl",
+                  pathname === link.href || pathname.startsWith(link.href + "/")
+                    ? "text-primary bg-primary/5"
+                    : "text-dark/70 hover:text-dark hover:bg-gray-50",
                 )}
               >
                 {link.label}
@@ -70,11 +75,17 @@ export default function Navbar() {
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-medium text-light transition-colors hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-xl border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary transition-all hover:bg-primary/10"
             >
               <Phone className="h-4 w-4" />
               WhatsApp
             </a>
+            <Link
+              href="/apply"
+              className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-2 text-sm font-semibold text-dark transition-all hover:brightness-110 shadow-lg shadow-accent/20"
+            >
+              Free Consultation
+            </Link>
           </div>
 
           <button
@@ -94,7 +105,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-gray-100 bg-light lg:hidden"
+            className="overflow-hidden border-t border-white/10 bg-white/95 backdrop-blur-xl"
           >
             <div className="space-y-1 px-4 py-4">
               {siteConfig.navLinks.map((link) => (
@@ -102,24 +113,32 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "block rounded-lg px-3 py-2 font-body text-sm font-medium transition-colors hover:bg-gray-50",
+                    "block rounded-xl px-4 py-3 font-body text-sm font-medium transition-colors hover:bg-gray-50",
                     pathname === link.href
-                      ? "text-primary"
+                      ? "text-primary bg-primary/5"
                       : "text-dark/70",
                   )}
                 >
                   {link.label}
                 </Link>
               ))}
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-light transition-colors hover:brightness-110"
-              >
-                <Phone className="h-4 w-4" />
-                WhatsApp
-              </a>
+              <div className="flex flex-col gap-2 pt-2">
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm font-medium text-primary transition-all"
+                >
+                  <Phone className="h-4 w-4" />
+                  WhatsApp
+                </a>
+                <Link
+                  href="/apply"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-dark transition-all hover:brightness-110"
+                >
+                  Free Consultation
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}
