@@ -1,7 +1,7 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Phone, Mail, MapPin } from "lucide-react"
 import { siteConfig } from "@/content/site"
+import { assetPath } from "@/lib/constants"
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -49,8 +49,8 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-5">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/logo/logo.png"
+              <img
+                src={assetPath("/logo/logo.png")}
                 alt={siteConfig.name}
                 width={36}
                 height={36}

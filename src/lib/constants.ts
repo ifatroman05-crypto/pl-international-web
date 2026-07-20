@@ -1,3 +1,9 @@
+export const BASE_PATH = "/pl-international-web"
+
+export function assetPath(path: string) {
+  return `${BASE_PATH}${path}`
+}
+
 export const BRAND = {
   primary: "#0B3EA9",
   secondary: "#1E5BFF",

@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Phone } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/content/site"
-import { WHATSAPP_NUMBER, WHATSAPP_MESSAGE } from "@/lib/constants"
+import { WHATSAPP_NUMBER, WHATSAPP_MESSAGE, assetPath } from "@/lib/constants"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -37,8 +36,8 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:h-20">
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/logo/logo.png"
+            <img
+              src={assetPath("/logo/logo.png")}
               alt={siteConfig.name}
               width={40}
               height={40}

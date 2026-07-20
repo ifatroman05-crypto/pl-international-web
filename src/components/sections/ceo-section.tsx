@@ -1,10 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/content/site"
+import { assetPath } from "@/lib/constants"
 import { ArrowRight } from "lucide-react"
 
 export default function CeoSection() {
@@ -21,15 +21,12 @@ export default function CeoSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative w-full aspect-[3/4] max-w-sm mx-auto md:mx-0">
+            <div className="relative w-full max-w-sm mx-auto md:mx-0">
               <div className="absolute inset-0 bg-primary/10 rounded-3xl transform rotate-3" />
-              <Image
-                src={ceo.image}
+              <img
+                src={assetPath(ceo.image)}
                 alt={ceo.name}
-                fill
-                priority
-                className="object-cover rounded-3xl shadow-soft"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-auto rounded-3xl shadow-soft relative"
               />
             </div>
           </motion.div>
