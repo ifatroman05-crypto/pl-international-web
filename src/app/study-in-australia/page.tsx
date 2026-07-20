@@ -5,13 +5,19 @@ import CTABanner from "@/components/sections/cta-banner"
 import { CheckCircle } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Study in Australia",
+  title: "Study in Australia | PL International",
   description:
     "Australia is home to some of the world's top universities. Learn about top universities, tuition fees, visa process, and more for Bangladeshi students.",
   openGraph: {
     title: "Study in Australia | PL International",
     description:
       "Australia is home to some of the world's top universities. Learn about top universities, tuition fees, visa process, and more.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Study in Australia | PL International",
+    description:
+      "Australia is home to some of the world's top universities. Learn about top universities, tuition fees, visa process, and more for Bangladeshi students.",
   },
   alternates: {
     canonical: `${siteConfig.url}/study-in-australia`,

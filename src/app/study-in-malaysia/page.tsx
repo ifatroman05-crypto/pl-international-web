@@ -6,13 +6,19 @@ import FAQAccordion from "@/components/ui/faq-accordion"
 import { CheckCircle } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Study in Malaysia",
+  title: "Study in Malaysia | PL International",
   description:
     "Malaysia offers world-class education at affordable costs. Learn about top universities, tuition fees, visa process, and more for Bangladeshi students.",
   openGraph: {
     title: "Study in Malaysia | PL International",
     description:
       "Malaysia offers world-class education at affordable costs. Learn about top universities, tuition fees, visa process, and more.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Study in Malaysia | PL International",
+    description:
+      "Malaysia offers world-class education at affordable costs. Learn about top universities, tuition fees, visa process, and more for Bangladeshi students.",
   },
   alternates: {
     canonical: `${siteConfig.url}/study-in-malaysia`,

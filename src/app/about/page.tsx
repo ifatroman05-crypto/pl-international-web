@@ -69,12 +69,13 @@ export default function AboutPage() {
       <section className="bg-dark py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 md:grid-cols-2">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
+            <div className="rounded-3xl overflow-hidden">
               <Image
-                src={siteConfig.ceo.image}
-                alt={siteConfig.ceo.name}
-                fill
-                className="object-cover"
+                src="/ceo/saad-nazrul.jpg"
+                alt="Sa'ad Nazrul, Founder & CEO of PL International"
+                width={400}
+                height={400}
+                className="w-full h-auto object-cover"
               />
             </div>
             <div>

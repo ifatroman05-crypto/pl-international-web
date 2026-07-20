@@ -26,12 +26,9 @@ export default function PageHero({ title, subtitle, breadcrumbs, className }: Pa
       <div className="relative z-10 mx-auto max-w-3xl text-center">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav className="mb-4 flex items-center justify-center gap-2 text-sm text-white/60">
-            <Link href="/" className="transition-colors hover:text-accent">
-              Home
-            </Link>
             {breadcrumbs.map((crumb, i) => (
               <span key={crumb.href} className="flex items-center gap-2">
-                <span>/</span>
+                {i > 0 && <span>/</span>}
                 {i === breadcrumbs.length - 1 ? (
                   <span className="text-accent">{crumb.label}</span>
                 ) : (
